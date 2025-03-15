@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Text Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-file-alt"></i> Image to Text Extractor</h1>
+            <p>Upload an image and extract text using OCR technology</p>
+        </header>
+
+        <main>
+            <div class="upload-container">
+                <div id="drop-area">
+                    <form id="upload-form">
+                        <input type="file" id="file-input" accept=".jpg,.jpeg,.png,.bmp" hidden>
+                        <label for="file-input" id="file-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Choose a file or drag it here</span>
+                        </label>
+                        <div id="preview-container" class="hidden">
+                            <img id="image-preview" src="#" alt="Preview">
+                            <button type="button" id="remove-image"><i class="fas fa-times"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <button id="extract-btn" disabled>Extract Text <i class="fas fa-magic"></i></button>
+            </div>
+
+            <div id="result-container" class="hidden">
+                <div class="result-header">
+                    <h2>Extracted Text</h2>
+                    <button id="copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                </div>
+                <div id="text-result">
+                    <p id="extracted-text"></p>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Processing image...</p>
+            </div>
+
+            <div id="error-message" class="hidden">
+                <i class="fas fa-exclamation-circle"></i>
+                <p id="error-text"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Image to Text Extractor | <a href="https://github.com/yourusername/image-to-text-extractor" target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
