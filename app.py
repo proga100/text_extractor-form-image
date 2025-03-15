@@ -63,4 +63,4 @@ def extract_text():
 if __name__ == '__main__':
     # Create uploads directory if it doesn't exist
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-    app.run(host='127.0.0.1', port=5012, debug=True) 
+    app.run(host='127.0.0.1', port=5000, debug=True) 
